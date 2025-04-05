@@ -14,6 +14,7 @@ public:
         for (div_t sum{0, 0}; sum.quot || l1 || l2; tail = tail->next) {
             if (l1) { sum.quot += l1->val; l1 = l1->next; }
             if (l2) { sum.quot += l2->val; l2 = l2->next; }
+            if (l3) { sum.quot += l3->val; l3 = l3->next; }
             sum = div(sum.quot, 10);
             tail->next = new ListNode(sum.rem);
         }
